@@ -143,7 +143,7 @@ export function DoctorsClient({ initialSearch = '' }: DoctorsClientProps) {
         <>
           {doctors.length > 0 ? (
             <>
-              <div className="text-sm text-slate-600">
+              <div className="text-sm text-slate-700 font-semibold">
                 {total} ta shifokor topildi
               </div>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -151,32 +151,29 @@ export function DoctorsClient({ initialSearch = '' }: DoctorsClientProps) {
                   <Link 
                     key={d._id || d.id} 
                     href={`/doctors/${d.slug}`} 
-                    className="group relative overflow-hidden bg-gradient-to-br from-white to-emerald-50/30 border-2 border-slate-100 rounded-2xl p-6 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+                    className="group relative overflow-hidden bg-white border-2 border-emerald-200 rounded-2xl p-6 hover:border-emerald-400 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
                   >
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/5 group-hover:to-teal-500/5 transition-all duration-300"></div>
-                    
                     <div className="relative flex flex-col gap-4">
                       <div className="flex items-start gap-4">
                         {d.photoUrl ? (
                           <img 
                             src={d.photoUrl} 
                             alt={`Dr. ${d.firstName} ${d.lastName}`}
-                            className="w-16 h-16 rounded-2xl object-cover border-2 border-emerald-200 shadow-md"
+                            className="w-16 h-16 rounded-2xl object-cover border-2 border-emerald-300 shadow-md"
                           />
                         ) : (
-                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-md">
+                          <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center shadow-md">
                             <span className="text-white font-bold text-xl">
                               {d.firstName[0]}{d.lastName[0]}
                             </span>
                           </div>
                         )}
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-bold text-lg text-slate-900 group-hover:text-emerald-600 transition-colors">
+                          <h3 className="font-extrabold text-lg text-slate-900 group-hover:text-emerald-700 transition-colors">
                             Dr. {d.firstName} {d.lastName}
                           </h3>
                           {d.specialtyIds && d.specialtyIds.length > 0 && (
-                            <div className="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-lg text-xs font-semibold mt-1">
+                            <div className="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-lg text-xs font-bold mt-1 border border-emerald-300">
                               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
@@ -188,29 +185,29 @@ export function DoctorsClient({ initialSearch = '' }: DoctorsClientProps) {
                       
                       <div className="space-y-2">
                         {d.clinicId && (
-                          <div className="flex items-center gap-2 text-sm text-slate-600">
-                            <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
-                              <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <div className="flex items-center gap-2 text-sm text-slate-800">
+                            <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0">
+                              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                               </svg>
                             </div>
-                            <span className="font-medium">Klinika</span>
+                            <span className="font-bold">Klinika</span>
                           </div>
                         )}
                         {d.yearsOfExp && (
-                          <div className="flex items-center gap-2 text-sm text-slate-600">
-                            <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-                              <svg className="w-4 h-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <div className="flex items-center gap-2 text-sm text-slate-800">
+                            <div className="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center flex-shrink-0">
+                              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                               </svg>
                             </div>
-                            <span className="font-medium">{d.yearsOfExp} yil tajriba</span>
+                            <span className="font-bold">{d.yearsOfExp} yil tajriba</span>
                           </div>
                         )}
                       </div>
                       
-                      <div className="pt-3 border-t border-slate-100">
-                        <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm group-hover:text-emerald-700">
+                      <div className="pt-3 border-t border-slate-200">
+                        <div className="flex items-center gap-2 text-emerald-700 font-extrabold text-sm group-hover:text-emerald-800">
                           <span>Batafsil ko&apos;rish</span>
                           <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

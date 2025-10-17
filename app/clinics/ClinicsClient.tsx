@@ -169,7 +169,7 @@ export function ClinicsClient({ initialSearch = '', initialCity = '' }: ClinicsC
         <>
           {clinics.length > 0 ? (
             <>
-              <div className="text-sm text-slate-600">
+              <div className="text-sm text-slate-700 font-semibold">
                 {total} ta tibbiy markaz topildi
               </div>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -177,10 +177,8 @@ export function ClinicsClient({ initialSearch = '', initialCity = '' }: ClinicsC
                   <Link 
                     key={c._id || c.id} 
                     href={`/clinics/${c.slug}`} 
-                    className="group relative overflow-hidden bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 rounded-2xl p-6 hover:border-blue-300 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+                    className="group relative overflow-hidden bg-white border-2 border-blue-200 rounded-2xl p-6 hover:border-blue-400 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
                   >
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-indigo-500/0 group-hover:from-blue-500/5 group-hover:to-indigo-500/5 transition-all duration-300"></div>
                     
                     <div className="relative flex flex-col gap-4">
                       <div className="flex items-start gap-4">
@@ -191,18 +189,18 @@ export function ClinicsClient({ initialSearch = '', initialCity = '' }: ClinicsC
                             className="w-16 h-16 rounded-2xl object-cover border-2 border-blue-200 shadow-md"
                           />
                         ) : (
-                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center shadow-md">
+                          <div className="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center shadow-md">
                             <svg className="w-9 h-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                           </div>
                         )}
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-bold text-lg text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                          <h3 className="font-extrabold text-lg text-slate-900 group-hover:text-blue-700 transition-colors line-clamp-2">
                             {c.name}
                           </h3>
                           {c.city && (
-                            <div className="inline-flex items-center gap-1 px-2.5 py-1 bg-blue-100 text-blue-700 rounded-lg text-xs font-semibold mt-1">
+                            <div className="inline-flex items-center gap-1 px-2.5 py-1 bg-blue-100 text-blue-800 rounded-lg text-xs font-bold mt-1 border border-blue-300">
                               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                               </svg>
@@ -214,30 +212,30 @@ export function ClinicsClient({ initialSearch = '', initialCity = '' }: ClinicsC
                       
                       <div className="space-y-2">
                         {c.address && (
-                          <div className="flex items-start gap-2 text-sm text-slate-600">
-                            <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-                              <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <div className="flex items-start gap-2 text-sm text-slate-800">
+                            <div className="w-8 h-8 rounded-lg bg-green-600 flex items-center justify-center flex-shrink-0">
+                              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                               </svg>
                             </div>
-                            <span className="line-clamp-2 font-medium pt-1">{c.address}</span>
+                            <span className="line-clamp-2 font-bold pt-1">{c.address}</span>
                           </div>
                         )}
                         {c.phone && (
-                          <div className="flex items-center gap-2 text-sm text-slate-600">
-                            <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-                              <svg className="w-4 h-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <div className="flex items-center gap-2 text-sm text-slate-800">
+                            <div className="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center flex-shrink-0">
+                              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                               </svg>
                             </div>
-                            <span className="font-medium">{c.phone}</span>
+                            <span className="font-bold">{c.phone}</span>
                           </div>
                         )}
                       </div>
                       
                       <div className="pt-3 border-t border-slate-100">
-                        <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm group-hover:text-blue-700">
+                        <div className="flex items-center gap-2 text-blue-700 font-extrabold text-sm group-hover:text-blue-800">
                           <span>Batafsil ko&apos;rish</span>
                           <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
