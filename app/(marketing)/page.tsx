@@ -4,10 +4,10 @@ export default function Home() {
   return (
     <div className="space-y-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 -z-10" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 -z-10" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/30">
+        {/* Decorative circles */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-emerald-200/20 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl -z-10"></div>
         
         <div className="text-center space-y-8 py-16 md:py-24">
           <div className="space-y-6 max-w-4xl mx-auto px-4">
@@ -19,9 +19,13 @@ export default function Home() {
             
             {/* Main Heading */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-              <span className="text-slate-900">Shifokor va</span>
+              <span className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 bg-clip-text text-transparent">
+                Shifokor va
+              </span>
               <br />
-              <span className="text-slate-900">klinikalarni </span>
+              <span className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 bg-clip-text text-transparent">
+                klinikalarni{' '}
+              </span>
               <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
                 toping
               </span>
@@ -31,7 +35,7 @@ export default function Home() {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-slate-500 leading-relaxed max-w-3xl mx-auto">
               O&apos;zbekistonda eng yaxshi shifokorlar va klinikalar. 
               Mutaxassislik, tajriba va xizmatlar bo&apos;yicha qidiring.
             </p>
@@ -72,18 +76,18 @@ export default function Home() {
           </div>
           
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto pt-8 px-4">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-emerald-600">500+</div>
-              <div className="text-sm text-slate-600 font-medium">Shifokorlar</div>
+          <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto pt-8 px-4">
+            <div className="group text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">500+</div>
+              <div className="text-sm text-slate-500 font-medium mt-2">Shifokorlar</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-teal-600">100+</div>
-              <div className="text-sm text-slate-600 font-medium">Klinikalar</div>
+            <div className="group text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">100+</div>
+              <div className="text-sm text-slate-500 font-medium mt-2">Klinikalar</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-cyan-600">10k+</div>
-              <div className="text-sm text-slate-600 font-medium">Bemorlar</div>
+            <div className="group text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">10k+</div>
+              <div className="text-sm text-slate-500 font-medium mt-2">Bemorlar</div>
             </div>
           </div>
         </div>
