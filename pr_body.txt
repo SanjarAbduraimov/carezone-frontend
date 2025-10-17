@@ -1,0 +1,14 @@
+carezone.uz MVP: katalog, profillar, bron, blog, SEO
+
+- Next.js 15 TS + Tailwind/shadcn base
+- Prisma + Postgres schema (users, doctors, clinics, services, schedules, slots, bookings, reviews, Q&A, blog, banners)
+- NextAuth (JWT), booking API (email confirm), iCal export
+- Clinic/Doctor pages with booking table
+- Blog index/post, JSON-LD (MedicalOrganization, Physician)
+- Telegram CTA, domain-for-sale banner, disclaimers
+
+Setup:
+1) cp .env.local.example .env.local and fill vars (DB, SMTP, NEXTAUTH_SECRET)
+2) npm run prisma:generate && npm run prisma:migrate
+3) npm run prisma:seed
+4) npm run dev
