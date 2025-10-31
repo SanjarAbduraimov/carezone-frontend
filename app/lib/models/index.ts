@@ -1,0 +1,11 @@
+export { User, type IUser } from './User';
+export { Doctor, type IDoctor } from './Doctor';
+export { Clinic, type IClinic } from './Clinic';
+export { Specialty, type ISpecialty } from './Specialty';
+export { Booking, type IBooking } from './Booking';
+export { default as Post, type IPost } from './Post';
+export { default as Category, type ICategory } from './Category';
+export { default as Review, type IReview } from './Review';
+export { default as Schedule, type ISchedule } from './Schedule';
+export { default as Slot, type ISlot } from './Slot';
+export { default as Service, type IService } from './Service';
